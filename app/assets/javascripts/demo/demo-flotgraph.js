@@ -143,27 +143,7 @@ $(function () {
             });
             $("#overall").bind("plothover", pieHover);        
 
-        $.plot($("#selectedTrans"), data4,
-            {
-                series: {
-                        pie: {
-                                show: true
-                        }
-                },
-                grid: {
-                        hoverable: true,
-                        clickable: true
-                },
-                legend: {
-                    show: false
-                },
-                tooltip: true,
-                tooltipOpts: {
-                    content: "%p.0%, %s"
-                }
-
-            });
-            $("#selectedTrans").bind("plothover", pieHover);
+      
 
         $.plot($("#recentTrans2"), data1,
             {

@@ -1712,7 +1712,7 @@ jQuery(document).ready(function() {
 
         var d1 = [];
         for (var i = 0; i <= 30; i += 1) {
-            d1.push([i, parseInt(Math.random() * 70 + 135)]);
+            d1.push([i, parseInt(Math.random() * 70 + 535)]);
         }
 
         var d2 = [];
@@ -1733,7 +1733,7 @@ jQuery(document).ready(function() {
         function plotWithOptions() {
             $.plot("#visitors-stats", [{
                     data: d1, 
-                    label: "Page Views",
+                    label: "Transaction Amount",
                     lines: {
                         show: lines,
                         fill: 0.1,
@@ -1745,34 +1745,34 @@ jQuery(document).ready(function() {
                         show: true,
                         radius: 1.875
                     }
-                }, {
-                    data: d2, 
-                    label: "New Users",
-                    bars: {
-                        show: bars,
-                        barWidth: 0.2,
-                        fill: 0.4,
-                        lineWidth: 1,
-                        align: "center"
-                    },
-                    points: {
-                        show: false,
-                        radius: 2.5
-                    }
-                }, {
-                    data: d3, 
-                    label: "Unique Visits",
-                    lines: {
-                        show: lines,
-                        fill: 0.1,
-                        //fillColor: {colors: [{opacity: 0.01}, {opacity: 0.2}]},
-                        steps: steps,
-                        lineWidth: 2.5
-                    },
-                    points: {
-                        show: true,
-                        radius: 2.5
-                    }
+                // }, {
+                //     data: d2, 
+                //     label: "New Users",
+                //     bars: {
+                //         show: bars,
+                //         barWidth: 0.2,
+                //         fill: 0.4,
+                //         lineWidth: 1,
+                //         align: "center"
+                //     },
+                //     points: {
+                //         show: false,
+                //         radius: 2.5
+                //     }
+                // }, {
+                //     data: d3, 
+                //     label: "Unique Visits",
+                //     lines: {
+                //         show: lines,
+                //         fill: 0.1,
+                //         //fillColor: {colors: [{opacity: 0.01}, {opacity: 0.2}]},
+                //         steps: steps,
+                //         lineWidth: 2.5
+                //     },
+                //     points: {
+                //         show: true,
+                //         radius: 2.5
+                //     }
 
                 }], {
                 series: {
