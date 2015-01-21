@@ -13,40 +13,37 @@
 
 ActiveRecord::Schema.define(version: 20150116100218) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "accounts", force: :cascade do |t|
     t.integer  "acc_no",     limit: 8
-    t.string   "IFIC"
-    t.integer  "user_id"
+    t.string   "IFIC",       limit: 255
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "buddies", force: :cascade do |t|
+    t.integer  "friend_id",  limit: 4
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
   end
 
-  create_table "buddies", force: :cascade do |t|
-    t.integer  "friend_id"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "countries", force: :cascade do |t|
-    t.float    "conversion"
-    t.string   "name"
-    t.string   "currency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.float    "conversion", limit: 24
+    t.string   "name",       limit: 255
+    t.string   "currency",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "password"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.integer  "country_id"
-    t.float    "progress"
-    t.float    "remitMasBalance"
+    t.string   "name",            limit: 255
+    t.string   "password",        limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "country_id",      limit: 4
+    t.float    "progress",        limit: 24
+    t.float    "remitMasBalance", limit: 24
   end
 
 end
